@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MainLogo create 1`] = `
+<div
+  className="MainLogo"
+>
+  <img
+    alt="Main Logo - Vase and star"
+    src="/image/Logo.png"
+  />
+  <p>
+    Welcome! 
+    Tracy
+    <br />
+    사이트 개장 준비중입니다...
+  </p>
+</div>
+`;
