@@ -9,6 +9,8 @@ pipeline {
         stage('Build') { // Build라는 이름의 stage를 정의함.
             steps {
                 sh 'yarn install'
+            }
+            steps {
                 sh 'yarn build'
             }
         }
