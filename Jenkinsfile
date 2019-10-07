@@ -6,12 +6,13 @@ pipeline {
         }
     }
     stages {
-            stage('Install') {
+            stage('Prepare') {
                 steps {
                     sh 'yarn install'
                     echo 'installing...'
                 }
-            }stage('Build') {
+            }
+            stage('Build') {
                 steps {
                     sh 'yarn build'
                     echo 'Building..'
