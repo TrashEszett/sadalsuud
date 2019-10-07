@@ -84,7 +84,7 @@
     "start": "cp ./.env.dev ./.env && node scripts/start.js",
     "prod-start": "cp ./.env.prod ./.env && node scripts/start.js",
     "build": "cp ./.env.prod ./.env && node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js --coverage --coverageDirectory=jest/"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -108,6 +108,10 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!src/**/*.d.ts"
+    ],
+    "coverageReporters": [
+      "text",
+      "cobertura"
     ],
     "setupFiles": [
       "react-app-polyfill/jsdom"

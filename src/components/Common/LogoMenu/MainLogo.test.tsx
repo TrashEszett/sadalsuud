@@ -3,7 +3,7 @@ import MainLogo from "./MainLogo";
 import renderer from 'react-test-renderer'
 
 test('MainLogo create', ()=>{
-   const component = renderer.create(<MainLogo userName="Tracy"/>);
+   const component = renderer.create(<MainLogo userName="Trㅁacy"/>);
    let tree = component.toJSON();
    expect(tree).toMatchSnapshot();
 });

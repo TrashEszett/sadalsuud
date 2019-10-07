@@ -12,16 +12,16 @@ pipeline {
                     echo 'installing...'
                 }
             }
-            stage('Build') {
-                steps {
-                    sh 'yarn build'
-                    echo 'Building..'
-                }
-            }
             stage('Test') {
                 steps {
                     sh 'yarn test'
                     echo 'Testing..'
+                }
+            }
+            stage('Build') {
+                steps {
+                    sh 'yarn build'
+                    echo 'Building..'
                 }
             }
             stage('Deploy') {
