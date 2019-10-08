@@ -31,6 +31,7 @@ pipeline {
                   }
                 }
                 steps {
+                    sh 'git add .'
                     echo 'Deploying.....'
                 }
             }
