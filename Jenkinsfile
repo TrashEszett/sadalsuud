@@ -41,7 +41,7 @@ pipeline {
                     git 'commit -m "auto commit jenkins"'
                     git 'merge master'
                     git 'push origin master:master'
-                    echo 'Deploying.....'
+                    echo 'Deploying......'
                 }
 
             }
