@@ -31,9 +31,6 @@ pipeline {
                 }
             }
             stage('Git') {
-                environment {
-                        BITBUCKET_COMMON_CREDS = credentials('jenkins-bitbucket-common-creds')
-                    }
                 steps {
                     git branch: 'dev',
                         credentialsId: 'TrashEszett',
