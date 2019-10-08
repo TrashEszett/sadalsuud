@@ -10,8 +10,6 @@ pipeline {
     stages {
             stage('Prepare') {
                 steps {
-                    /* 깃이 업대서,, */
-                    sh 'alias git="docker run -ti --rm -v $(pwd):/git -v $HOME/.ssh:/root/.ssh alpine/git'
                     sh 'yarn install'
                     echo 'installing...'
                 }
