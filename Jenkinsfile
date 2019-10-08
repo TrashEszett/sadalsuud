@@ -13,9 +13,6 @@ pipeline {
         }
         */
     }
-    options {
-        parallelsAlwaysFailFast()
-    }
     stages {
             stage('Prepare') {
                 steps {
@@ -39,16 +36,15 @@ pipeline {
                 when {
                   branch 'dev'
                 }
-                /* 동시실 */
-                parallel {
-                    steps {
-                        sh 'git add .'
-                        sh 'git commit -m "auto commit jenkins"'
-                        sh 'git merge master'
-                        sh 'git push origin master:master'
-                        echo 'Deploying.....'
-                    }
+                /* 동시실행 */
+                steps {
+                    sh 'git add .'
+                    sh 'git commit -m "auto commit jenkins"'
+                    sh 'git merge master'
+                    sh 'git push origin master:master'
+                    echo 'Deploying.....'
                 }
+
             }
         }
 }
