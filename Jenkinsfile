@@ -32,6 +32,9 @@ pipeline {
                 }
                 steps {
                     sh 'git add .'
+                    sh 'git commit -m ${date -u}'
+                    sh 'git merge master'
+                    sh 'git push origin master:master'
                     echo 'Deploying.....'
                 }
             }
