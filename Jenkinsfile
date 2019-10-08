@@ -7,15 +7,15 @@ pipeline {
             image 'node:12.11-alpine'
             args '-p 3000:3000'
         }
-        /*
         docker {
-            image 'git:'
+            image 'alpine/git'
         }
-        */
     }
     stages {
             stage('Prepare') {
                 steps {
+                    /* 깃이 업대서,, */
+                    sh 'alias git="docker run -ti --rm -v $(pwd):/git -v $HOME/.ssh:/root/.ssh alpine/git'
                     sh 'yarn install'
                     echo 'installing...'
                 }
