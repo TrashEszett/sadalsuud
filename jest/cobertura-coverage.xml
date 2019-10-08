@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="44" lines-covered="2" line-rate="0.0455" branches-valid="32" branches-covered="0" branch-rate="0" timestamp="1570437063267" complexity="0" version="0.1">
+<coverage lines-valid="44" lines-covered="2" line-rate="0.0455" branches-valid="32" branches-covered="0" branch-rate="0" timestamp="1570513964306" complexity="0" version="0.1">
   <sources>
     <source>/Users/eunsol/Dev/sadalsuud</source>
   </sources>

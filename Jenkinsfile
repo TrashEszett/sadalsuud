@@ -32,7 +32,7 @@ pipeline {
                 }
                 steps {
                     sh 'git add .'
-                    sh 'git commit -m auto commit jenkins'
+                    sh 'git commit -m "auto commit jenkins"'
                     sh 'git merge master'
                     sh 'git push origin master:master'
                     echo 'Deploying.....'
