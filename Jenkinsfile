@@ -24,7 +24,7 @@ pipeline {
                     echo 'Building..'
                 }
             }
-            stage('Deploy') {
+            stage('Git') {
                 when {
                   expression {
                     currentBuild.result == null || currentBuild.result == 'SUCCESS'
@@ -32,7 +32,7 @@ pipeline {
                 }
                 steps {
                     sh 'git add .'
-                    sh 'git commit -m ${date -u}'
+                    sh 'git commit -m auto commit jenkins'
                     sh 'git merge master'
                     sh 'git push origin master:master'
                     echo 'Deploying.....'
