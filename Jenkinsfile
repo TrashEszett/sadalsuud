@@ -33,10 +33,6 @@ pipeline {
                 }
             }
             stage('Git') {
-                when {
-                  branch 'dev'
-                }
-                /* 동시실행 */
                 steps {
                     sh 'git add .'
                     sh 'git commit -m "auto commit jenkins"'
