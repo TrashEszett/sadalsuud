@@ -34,9 +34,6 @@ pipeline {
             }
             stage('Git') {
                 steps {
-                    git branch: 'dev',
-                        credentialsId: 'eszett',
-                        url: 'https://github.com/TrashEszett/sadalsuud.git'
                         withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
                             git 'add .'
                             git 'commit -m "auto commit jenkins"'
