@@ -34,10 +34,11 @@ pipeline {
             }
             stage('Git') {
                 steps {
-/*                    git branch: 'dev',
-                        credentialsId: 'eszett',
-                        url: 'https://github.com/TrashEszett/sadalsuud.git' */
+/*                     */
                     sshagent(['0703fafa-8243-4f8f-a20e-9f3d2e19741b']) {
+                        git branch: 'dev',
+                            credentialsId: 'eszett',
+                            url: 'https://github.com/TrashEszett/sadalsuud.git'
                          git 'add .'
                          git 'commit -m "auto commit jenkins"'
                          git 'merge master'
