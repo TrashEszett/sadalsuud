@@ -37,11 +37,13 @@ pipeline {
                     git branch: 'dev',
                         credentialsId: 'eszett',
                         url: 'https://github.com/TrashEszett/sadalsuud.git'
-                    git 'add .'
-                    git 'commit -m "auto commit jenkins"'
-                    git 'merge master'
-                    git 'push origin master:master'
-                    echo 'Deploying......'
+                        withCredentials([usernamePassword(credentialsId: 'eszett', passwordVariable: 'eunsol1992', usernameVariable: 'escho')]) {
+                            git 'add .'
+                            git 'commit -m "auto commit jenkins"'
+                            git 'merge master'
+                            git 'push origin master:master'
+                            echo 'Deploying......'
+                        }
                 }
 
             }
