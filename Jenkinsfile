@@ -34,14 +34,17 @@ pipeline {
             }
             stage('Git') {
                 steps {
-                        /*withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {*/
-                            git credentialsId: 'eszett'
-                            git 'add .'
-                            git 'commit -m "auto commit jenkins"'
-                            git 'merge master'
-                            git 'push origin master:master'
-                            echo 'Deploying......'
-                       /* }*/
+                    git branch: 'dev',
+                        credentialsId: 'eszett',
+                        url: 'https://github.com/TrashEszett/sadalsuud.git'
+
+                        sh 'git add .'
+                        sh 'git commit -m "auto commit jenkins"'
+                        sh 'git merge master'
+                        sh 'git push origin master:master'
+                        
+                        echo 'Deploying......'
+
                 }
 
             }
