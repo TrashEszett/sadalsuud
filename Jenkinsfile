@@ -37,15 +37,17 @@ pipeline {
 /*                    git branch: 'dev',
                         credentialsId: 'eszett',
                         url: 'https://github.com/TrashEszett/sadalsuud.git' */
+                        node{
+                            sshagent(['0703fafa-8243-4f8f-a20e-9f3d2e19741b']) {
+                                 sh '/usr/local/bin/git add .'
+                                 sh '/usr/local/bin/git commit -m "auto commit jenkins"'
+                                 sh '/usr/local/bin/git merge master'
+                                 sh '/usr/local/bin/git push origin master:master'
 
-                        sshagent(['0703fafa-8243-4f8f-a20e-9f3d2e19741b']) {
-                            sh '/usr/local/bin/git add .'
-                            sh '/usr/local/bin/git commit -m "auto commit jenkins"'
-                            sh '/usr/local/bin/git merge master'
-                            sh '/usr/local/bin/git push origin master:master'
-
-                            echo 'Deploying......'
+                                 echo 'Deploying......'
+                             }
                         }
+
                 }
 
             }
