@@ -38,10 +38,10 @@ pipeline {
                         credentialsId: 'eszett',
                         url: 'https://github.com/TrashEszett/sadalsuud.git'
                         withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                            sh 'git add .'
-                            sh 'git commit -m "auto commit jenkins"'
-                            sh 'git merge master'
-                            sh 'git push origin master:master'
+                            git 'add .'
+                            git 'commit -m "auto commit jenkins"'
+                            git 'merge master'
+                            git 'push origin master:master'
                             echo 'Deploying......'
                         }
                 }
