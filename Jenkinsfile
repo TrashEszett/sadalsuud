@@ -34,13 +34,14 @@ pipeline {
             }
             stage('Git') {
                 steps {
-                        withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
+                        /*withCredentials([usernamePassword(credentialsId: 'git-pass-credentials-ID', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {*/
+                            git credentialsId: 'eszett'
                             git 'add .'
                             git 'commit -m "auto commit jenkins"'
                             git 'merge master'
                             git 'push origin master:master'
                             echo 'Deploying......'
-                        }
+                       /* }*/
                 }
 
             }
